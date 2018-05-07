@@ -30,6 +30,13 @@
 - EXCEL.打印机不可用
 - EXCEL.保存失败
 
+## 无法运行
+```
+该版本的 D:\PPT-Convertor-Gateway\tools\office-auto-close.exe 与您运行的 Windows
+ 版本不兼容。请查看计算机的系统信息，了解是否需要 x86 (32 位)或 x64 (64 位)版本
+的程序，然后联系软件发行者。
+```
+
 # CHECK
 
 |   Type  | Sub-Type | Finissh |

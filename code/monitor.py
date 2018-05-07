@@ -54,10 +54,10 @@ def main():
 def help():
     print(
         "monitor.exe\n\t{0}\n\t{1}\n\t{2}\n\t{3}\n\t{4}".format(
-            "-h|--help\t\n\t\t帮助文档",
-            "-l|--logList\t是否打印当前窗口列表\n\t\t1:\t当前窗口列表\n\t\t2:\t启用监控\n\t\t3:\t测试参数化运行状态\n\t\t4:\t测试日志打印",
-            "-t|--type\t请求服务类型\n\t",
-            "-d|--duration\t运行休眠时长\n\t",
+            "-h|--help\t帮助文档",
+            "-l|--logList\t是否打印当前窗口列表",
+            "-t|--type\t请求服务类型\n\t\t1:\t当前窗口列表\n\t\t2:\t启用监控\n\t\t3:\t测试参数化运行状态\n\t\t4:\t测试日志打印",
+            "-d|--duration\t运行休眠时长",
             "-p|--logPath\t日志输出文件的绝对路径"))
 
 
