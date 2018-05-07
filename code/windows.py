@@ -99,13 +99,16 @@ def search(hwnd, lst):
     for idx in range(size):
         claze = lst[idx]
         log.logger.debug("search->\t%s\t%s", hex(hwnd), claze)
-        exHwnd = win32gui.FindWindowEx(hwnd, None, claze, None)
-        log.logger.debug("search<-\t%s\t%s\t%s", hex(hwnd), claze, exHwnd)
-        if 0 != exHwnd:
-            hwnd = exHwnd
-            log.logger.debug("search=\t%s\t%s\t%s", idx, claze, hwnd)
-        else:
-            return hwnd
+        try:
+            exHwnd = win32gui.FindWindowEx(hwnd, None, claze, None)
+            log.logger.debug("search<-\t%s\t%s\t%s", hex(hwnd), claze, exHwnd)
+            if 0 != exHwnd:
+                hwnd = exHwnd
+                log.logger.debug("search=\t%s\t%s\t%s", idx, claze, hwnd)
+                return hwnd
+        except Exception as e:
+            log.logger.debug(
+                "fail to findWindow(hwnd=%s, class=%s): %s", hwnd, className, str(e))
 
     return hwnd
 
@@ -123,12 +126,16 @@ def handle():
 
         for idx in range(len(setting.classes)):
             className = [*setting.classes][idx]
-            hwnd = win32gui.FindWindow(className, None)
-            log.logger.debug("handle->\t%s\t%s", className, hex(hwnd))
-            if filterTitle(hwnd):
-                log.logger.debug("handle<-\t%s\t%s", className, hex(hwnd))
-                win32gui.SetForegroundWindow(hwnd)
-                close(search(hwnd, setting.classes[className]), idx)
+            try:
+                hwnd = win32gui.FindWindow(className, None)
+                log.logger.debug("handle->\t%s\t%s", className, hex(hwnd))
+                if filterTitle(hwnd):
+                    log.logger.debug("handle<-\t%s\t%s", className, hex(hwnd))
+                    win32gui.SetForegroundWindow(hwnd)
+                    close(search(hwnd, setting.classes[className]), idx)
+            except Exception as e:
+                log.logger.debug(
+                    "fail to findWindow(class=%s): %s", className, str(e))
 
         log.flush()
         time.sleep(int(conf.duration))

@@ -31,15 +31,42 @@ class Setting:
     def __init__(self):
         # 监听类型
         self.classes = {
+
+            # Group
             "bosa_sdm_msword": [],
-            "#32770": [],
+            "#32770": ["EDTBX", "Edit", "RichEdit20W"],
             "NetUIHWND": [],
             "NUIDialog": ["NetUIHWND", "NetUICtrlNotifySink", "RICHEDIT60W"],
             "bosa_sdm_XL9": [],
+
+            # # Windows 10
+            # "bosa_sdm_msword": [],
+            # "#32770": [],
+            # "NetUIHWND": [],
+            # "NUIDialog": ["NetUIHWND", "NetUICtrlNotifySink", "RICHEDIT60W"],
+            # "bosa_sdm_XL9": [],
+
+            # # Windows Service 2008 R2
+            # "bosa_sdm_msword": [],
+            # "#32770": ["EDTBX", "Edit", "RichEdit20W"],
+            # "bosa_sdm_XL9": [],
+
         }
         # 对应异常类型
-        self.types = ["DOC.密码|文件损坏", "文件损坏|保存失败|打印机不可用",
-                      "未注册", "PPT.密码", "DOC.密码|选择打印机"]
+        self.types = [
+
+            # Group
+            "DOC.密码|文件损坏", "密码|文件损坏|保存失败|打印机不可用",
+            "未注册", "PPT.密码|未注册", "Excel.密码|选择打印机",
+
+            # # Windows 10
+            # "DOC.密码|文件损坏", "文件损坏|保存失败|打印机不可用",
+            # "未注册", "PPT.密码|未注册", "Excel.密码|选择打印机",
+
+            # # Windows Service 2008 R2
+            # "DOC.密码|文件损坏", "密码|文件损坏|修复", "EXcel.文件损坏",
+
+        ]
         # 兼容类型的窗口标题
         self.titles = ["Microsoft Word", "Microsoft Excel",
                        "Microsoft PowerPoint", "密码", "打印机设置"]
