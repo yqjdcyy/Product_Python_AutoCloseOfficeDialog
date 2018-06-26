@@ -1,3 +1,22 @@
+# Call
+## 帮助文档
+-  `monitor.exe -h`
+	```
+	monitor.exe
+        -h|--help       帮助文档
+        -l|--logList    是否打印当前窗口列表
+        -t|--type       请求服务类型
+                1:      当前窗口列表
+                2:      启用监控
+                3:      测试参数化运行状态
+                4:      测试日志打印
+        -d|--duration   运行休眠时长
+        -p|--logPath    日志输出文件的绝对路径
+	```
+
+## 调用示例
+- `monitor.exe -t 2 -d 30`
+
 
 
 # STATISTIC
