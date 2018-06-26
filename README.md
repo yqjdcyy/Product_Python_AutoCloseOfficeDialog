@@ -94,7 +94,7 @@
 |           | PASSWORD   | Y         |
 |           | READONLY   | Y         |
 | PRINTER   |            |           |
-|           | BROKE      | -         |
+|           | BROKE      | Y         |
 
 ## Windows Service 2008 R2
 | Type      | Sub-Type   | Finissh   |
@@ -111,7 +111,7 @@
 |           | PASSWORD   | Y         |
 |           | READONLY   | Y         |
 | PRINTER   |            |           |
-|           | BROKE      | -         |
+|           | BROKE      | Y         |
 
 
 # REFERENCE
