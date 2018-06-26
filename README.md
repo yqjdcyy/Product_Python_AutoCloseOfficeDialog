@@ -1,5 +1,5 @@
-# Call
-## 帮助文档
+# Invoke
+## Help
 -  `monitor.exe -h`
 	```
 	monitor.exe
@@ -14,7 +14,7 @@
         -p|--logPath    日志输出文件的绝对路径
 	```
 
-## 调用示例
+## Prod.Invoke
 - `monitor.exe -t 2 -d 30`
 
 
