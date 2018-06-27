@@ -1,4 +1,8 @@
 # Invoke
+## Pack
+- `pyinstaller -F -i black.ico monitor.py`
+	- `/dist/monitor.exe`
+
 ## Help
 -  `monitor.exe -h`
 	```
@@ -17,6 +21,28 @@
 ## Prod.Invoke
 - `monitor.exe -t 2 -d 30`
 
+## Service.Install
+- `nssm.exe install dialog_autoclose_monitor /dist/monitor.exe -l -t 2 -d 30`
+	```
+	Service "dialog_autoclose_monitor" installed successfully!
+	```
+## Service.Start
+- `nssm.exe start dialog_autoclose_monitor`
+	```
+	dialog_autoclose_monitor: START: 操作成功完成。
+	```
+
+## Service.Stop
+- `nssm.exe stop dialog_autoclose_monitor`
+	```
+	dialog_autoclose_monitor: STOP: 操作成功完成。
+	```
+
+## Service.Remove
+- `nssm.exe remove dialog_autoclose_monitor`
+	```
+	Service "dialog_autoclose_monitor" removed successfully!
+	```
 
 
 # STATISTIC
@@ -115,10 +141,31 @@
 
 
 # REFERENCE
-- code
-	- [yqjdcyy/Utils_Python](https://github.com/yqjdcyy/Utils_Python/blob/master/windows/dialog/README.md)
-- SpyXX
-	- [SpyXX for windows service 2008 R2](http://web.archive.org/web/20090921065444/http://www.windows-spy.com:80/download/)
-	- [SpyXX for Windows 10](http://otzm88f21.bkt.clouddn.com/69e378a2-e871-4c28-9d78-3fe59305c23d.zip)
-	- [I want Spy++ but I don't have Visual Studio [closed]](https://stackoverflow.com/questions/1811019/i-want-spy-but-i-dont-have-visual-studio)
+## Code
+- [yqjdcyy/Utils_Python](https://github.com/yqjdcyy/Utils_Python/blob/master/windows/dialog/README.md)
 
+## SpyXX
+- [SpyXX for windows service 2008 R2](http://web.archive.org/web/20090921065444/http://www.windows-spy.com:80/download/)
+- [SpyXX for Windows 10](http://otzm88f21.bkt.clouddn.com/69e378a2-e871-4c28-9d78-3fe59305c23d.zip)
+- [I want Spy++ but I don't have Visual Studio [closed]](https://stackoverflow.com/questions/1811019/i-want-spy-but-i-dont-have-visual-studio)
+
+## Pack
+- [Python.Pack](http://domain.yqjdcyy.com/post/python.pack/)
+
+## Service
+### Commons
+- [Windows.Service](http://domain.yqjdcyy.com/post/windows.service/)
+- [Create Windows service from executable](https://stackoverflow.com/questions/3582108/create-windows-service-from-executable)
+
+### SC
+- [Sc create](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/sc-create)
+- [如何通过使用 Sc.exe 创建 Windows 服务](https://support.microsoft.com/zh-cn/help/251192/how-to-create-a-windows-service-by-using-sc-exe)
+- [How to start a service with certain start parameters on Windows](https://serverfault.com/questions/143367/how-to-start-a-service-with-certain-start-parameters-on-windows)
+- [When creating a service with sc.exe how to pass in context parameters?](https://stackoverflow.com/questions/3663331/when-creating-a-service-with-sc-exe-how-to-pass-in-context-parameters)
+
+### InstallUtil 
+- [How to: Install and Uninstall Services](https://docs.microsoft.com/en-us/dotnet/framework/windows-services/how-to-install-and-uninstall-services)
+- [Installutil.exe](https://docs.microsoft.com/zh-cn/dotnet/framework/tools/installutil-exe-installer-tool)
+
+## NSSM
+- [NSSM - the Non-Sucking Service Manager](http://nssm.cc/)

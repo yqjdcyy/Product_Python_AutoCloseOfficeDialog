@@ -107,7 +107,7 @@ def search(hwnd, lst):
                 log.logger.debug("search=\t%s\t%s\t%s", idx, claze, hwnd)
                 return hwnd
         except Exception as e:
-            log.logger.debug(
+            log.logger.error(
                 "fail to findWindow(hwnd=%s, class=%s): %s", hwnd, className, str(e))
 
     return hwnd
